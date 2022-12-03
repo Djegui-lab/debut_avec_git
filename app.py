@@ -5,6 +5,13 @@ import numpy as np
 
 load_model=pickle.load(open('C:/ProgramData/Anaconda3/envs/djegui/deployement_machine_learning/diabetes_model.sav','rb'))
 
+# Page configuration
+st.set_page_config(
+     page_title='Simple ML App',
+     page_icon='🎈',
+     layout='wide',
+     initial_sidebar_state='expanded')
+
 def diabete_prediction(entree_data):
     tableau_numpy = np.array(entree_data)
     input_data_reshape = tableau_numpy.reshape(1, -1)
@@ -34,8 +41,5 @@ def main():
             
     st.success('The output is {}'.format(diagnostique))  
    
-        
-if __name__ == "__main__":
-    main()  
-    
+
    
